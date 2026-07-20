@@ -20,7 +20,6 @@ const username = Joi.string()
       "string.max": "Username cannot exceed 20 characters",
   });
 
-
 const password = Joi.string()
   .min(6)
   .max(20)
