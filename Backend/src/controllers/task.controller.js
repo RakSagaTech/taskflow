@@ -35,3 +35,31 @@ export const createTaskController = async (req, res) => {
 
   }
 };
+
+
+export const getAllTasksController = async (req, res) => {
+  try {
+
+    const tasks = await Task.find({
+      createdBy: req.user.id,
+    }).sort({
+      createdAt: -1,
+    });
+
+    return res.status(200).json({
+      message: "Tasks fetched successfully",
+      data: {
+        tasks,
+      },
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+
+  }
+};
