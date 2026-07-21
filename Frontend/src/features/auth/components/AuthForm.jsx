@@ -28,7 +28,7 @@ const labelClass = `
 `
 
 
-const AuthForm = ({title, buttonText, description, showEmail, footerLink, footerLinkText, footerText}) => {
+const AuthForm = ({title, buttonText, description, showEmail=true, footerLink, footerLinkText, footerText}) => {
   return (
     <section className="w-full max-w-lg border border-slate-700 rounded-2xl bg-slate-800 p-8 shadow-2xl">
       <header className="mb-10 text-center">
@@ -76,7 +76,7 @@ const AuthForm = ({title, buttonText, description, showEmail, footerLink, footer
               placeholder="Enter email"
               className={inputClass}
               autoComplete="email"
-              required={showEmail}
+              required
             />
           </div>
         )}

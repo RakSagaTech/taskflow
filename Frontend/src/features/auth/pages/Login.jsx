@@ -11,7 +11,7 @@ const Login = () => {
         showEmail={false}
         footerText="Don't have an account?"
         footerLinkText="Register"
-        footerLink="/register"
+        footerLink="/"
       />
     </main>
   )
