@@ -28,7 +28,7 @@ const labelClass = `
 `
 
 
-const AuthForm = ({title, buttonText, description}) => {
+const AuthForm = ({title, buttonText, description, showEmail, footerLink, footerLinkText, footerText}) => {
   return (
     <section className="w-full max-w-lg border border-slate-700 rounded-2xl bg-slate-800 p-8 shadow-2xl">
       <header className="mb-10 text-center">
@@ -64,20 +64,22 @@ const AuthForm = ({title, buttonText, description}) => {
           />
         </div>
 
-        <div>
-          <label htmlFor="email" className={labelClass}>
-            Email
-          </label>
-          <input 
-            type="email" 
-            id="email"
-            name="email"
-            placeholder="Enter email"
-            className={inputClass}
-            autoComplete="email"
-            required
-          />
-        </div>
+        {showEmail && (
+          <div>
+            <label htmlFor="email" className={labelClass}>
+              Email
+            </label>
+            <input 
+              type="email" 
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              className={inputClass}
+              autoComplete="email"
+              required={showEmail}
+            />
+          </div>
+        )}
 
         <div>
           <label htmlFor="password" className={labelClass}>
@@ -101,6 +103,16 @@ const AuthForm = ({title, buttonText, description}) => {
           {buttonText}
         </button>
       </form>
+
+      <div className="pt-2 text-sm text-slate-400">
+        {footerText}
+        <Link
+          to={footerLink}
+          className="font-medium text-blue-500 transition-colors hover:text-blue-400 ml-1"
+        >
+          {footerLinkText}
+        </Link>
+      </div>
     </section>
   )
 }

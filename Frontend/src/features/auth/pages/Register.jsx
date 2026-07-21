@@ -7,6 +7,9 @@ const Register = () => {
         title="Create Account"
         buttonText="Register"
         description="Sign up to organize your work, track your progress, and stay productive."
+        footerText="Already have an account?"
+        footerLinkText="Login"
+        footerLink="/login"
       />
     </main>
   )
