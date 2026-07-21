@@ -120,9 +120,19 @@ npm install
 
 ---
 
-# Environment Variables
+## Environment Variables
 
 Create a `.env` file in the project root.
+
+You can use the provided `.env.example` file as a template.
+
+```bash
+cp .env.example .env
+```
+
+**For Windows users:** If the `cp` command is not available, simply copy the `.env.example` file, rename it to `.env`, and replace the placeholder values with your own configuration.
+
+Example `.env` file:
 
 ```env
 PORT=3000
@@ -346,3 +356,4 @@ Backend Developer Assignment
 GitHub:
 
 https://github.com/RakSagaTech/taskFlow
+
